@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WebCraft Solutions - Portfolio</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+<h1 class="logo">
+  <a href="index.html">WebCraft <span>Solutions</span></a>
+</h1>
+      <nav class="main-nav" role="navigation" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html" aria-current="page">Accueil</a></li>
+          <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">À propos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Créons des interfaces web élégantes et performantes</h2>
+        <p class="subtitle">Portfolio interactif — Projets réalisés par WebCraft Solutions</p>
+      </div>
+    </section>
+
+    <section class="portfolio container" aria-labelledby="portfolio-title">
+      <h3 id="portfolio-title">Nos projets</h3>
+
+      <div id="controls" class="controls" aria-hidden="false">
+        <div id="loader" class="loader" role="status" aria-live="polite">Chargement...</div>
+        <div id="error" class="error" role="alert" hidden></div>
+        <div id="filters" class="filters" aria-label="Filtrer par technologie"></div>
+      </div>
+
+      <div id="projectsGrid" class="projects-grid" aria-live="polite"></div>
+      <div id="noResults" class="no-results" hidden>Aucun projet trouvé.</div>
+    </section>
+  </main>
+
+  <!-- Modal template -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button id="modalClose" class="modal-close" aria-label="Fermer la fenêtre">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> WebCraft Solutions — Tous droits réservés</p>
+        <div class="socials" aria-hidden="true">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://www.linkedin.com/in/shaman-viellet-11550a303/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

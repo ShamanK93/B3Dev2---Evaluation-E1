@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact - WebCraft Solutions</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+<h1 class="logo">
+  <a href="index.html">WebCraft <span>Solutions</span></a>
+  </h1>
+      <nav class="main-nav" role="navigation" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html" aria-current="page">Accueil</a></li>
+          <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">À propos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section aria-labelledby="contact-title">
+      <h2 id="contact-title">Nous contacter</h2>
+      <p>Remplissez le formulaire ci-dessous. (Validation côté client incluse)</p>
+
+      <form id="contactForm" novalidate>
+        <label for="name">Nom *</label>
+        <input id="name" name="name" required aria-required="true">
+
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" required aria-required="true">
+
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+
+        <button type="submit">Envoyer</button>
+        <div id="formMessage" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> WebCraft Solutions — Tous droits réservés</p>
+        <div class="socials" aria-hidden="true">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://www.linkedin.com/in/shaman-viellet-11550a303/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

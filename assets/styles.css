@@ -1,0 +1,541 @@
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #111;
+  background: #f8f8f8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header sticky */
+.site-header {
+  background: #fff;
+  color: #111;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: sticky; /* reste collé en haut */
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: transform 0.3s ease-in-out;
+}
+
+.site-header.hidden {
+  transform: translateY(-100%); /* disparaît quand scroll down */
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 300;
+  font-size: 1.8rem;
+}
+
+.logo span {
+  font-weight: 600;
+  color: #e82127; /* Rouge Tesla */
+}
+
+/* Logo moderne fixe pour tous les états */
+.logo a,
+.logo a:visited,
+.logo a:hover,
+.logo a:active {
+  color: #1a1a1a; /* noir pour le texte normal */
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  display: inline-block;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.logo a span,
+.logo a span:visited,
+.logo a span:hover,
+.logo a span:active {
+  color: #e82127; /* rouge accent */
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+/* Soulignement animé au hover */
+.logo a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #e82127;
+  transition: width 0.3s ease;
+}
+
+.logo a:hover::after {
+  width: 100%;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding-bottom: 0.2rem;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+  border-bottom: 2px solid #e82127;
+  color: #e82127;
+}
+
+/* Hero avec image floue */
+.hero {
+  position: relative;
+  color: #fff;
+  padding: 6rem 1rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/imagefond2.jpg'); /* Remplace par ton image */
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  opacity: 0.4;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hero:hover::before {
+  opacity: 0.5;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 200;
+}
+
+/* Portfolio Section */
+.portfolio h3 {
+  margin: 3rem 0 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #111;
+  font-weight: 300;
+}
+
+/* Loader et erreurs */
+.loader {
+  text-align: center;
+  padding: 1rem;
+  color: #555;
+}
+
+.error {
+  color: #e82127;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.no-results {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}
+
+/* Filtres */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: .5rem 1rem;
+  border: 1px solid #e82127;
+  background: #fff;
+  color: #e82127;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all .3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #e82127;
+  color: #fff;
+}
+
+/* Grille de projets */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform .3s, box-shadow .3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.project-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: .3rem;
+  color: #111;
+  font-weight: 400;
+}
+
+.client {
+  font-size: .9rem;
+  color: #555;
+  margin-bottom: .5rem;
+}
+
+.tech-list {
+  margin: .5rem 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: .3rem .6rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  margin: .2rem;
+  font-size: .8rem;
+  color: #111;
+}
+
+.btn-details {
+  margin-top: .8rem;
+  padding: .5rem 1rem;
+  background: #e82127;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background .3s, transform .3s;
+}
+
+.btn-details:hover {
+  background: #a6181f;
+  transform: translateY(-2px);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17,17,17,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #111;
+}
+
+.modal h2 {
+  margin-bottom: 1rem;
+  color: #111;
+  font-weight: 400;
+}
+
+.modal p,
+.modal li {
+  margin-bottom: .5rem;
+}
+
+.modal a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #fff;
+  background: #e82127;
+  padding: .5rem 1rem;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+.modal a:hover {
+  background: #a6181f;
+}
+
+/* Stats (About) */
+.stats {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.stats h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #111;
+  font-weight: 300;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Stats (About) modernisé */
+.stat {
+  background: linear-gradient(135deg, #e82127, #ff4b3e); /* Dégradé rouge style Tesla */
+  color: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  min-width: 160px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(232,33,39,0.3);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.stat:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(232,33,39,0.4);
+  background: linear-gradient(135deg, #ff4b3e, #e82127); /* inversé au hover */
+}
+
+.stat h4 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.stat p {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+
+.stat h4 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Team (About) */
+.team {
+  padding: 4rem 1rem;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.team h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #111;
+  font-weight: 300;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.member {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.member img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.member h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: #111;
+}
+
+.member p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Contact */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+form input,
+form textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #e82127;
+  outline: none;
+}
+
+form button {
+  padding: 0.6rem 1rem;
+  background: #e82127;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background .3s;
+}
+
+form button:hover {
+  background: #a6181f;
+}
+
+/* Footer */
+.site-footer {
+  background: #111;
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.site-footer .socials a {
+  color: #e82127;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.site-footer .socials a:hover {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    flex-direction: column;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
